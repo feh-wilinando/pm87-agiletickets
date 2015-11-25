@@ -121,7 +121,6 @@ public class Sessao {
 		return preco;
 	}
 	
-	
 	public BigDecimal aplicaPercentual( double percentual ){
 		return preco.add( getPercentualDoPreco(percentual)  );
 	}
@@ -130,4 +129,14 @@ public class Sessao {
 		return preco.multiply(BigDecimal.valueOf(percentual));
 	}
 	
+	public BigDecimal calculaPreco(){
+		return this.espetaculo.getTipo().calculaPreco(this, getPercentualDisponivel() );
+	}
+	
+	private double getPercentualDisponivel(){
+		double disponivel = getIngressosDisponiveis();
+		
+		return disponivel / totalIngressos;
+		
+	}
 }
