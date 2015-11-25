@@ -121,4 +121,13 @@ public class Sessao {
 		return preco;
 	}
 	
+	
+	public BigDecimal aplicaPercentual( double percentual ){
+		return preco.add( getPercentualDoPreco(percentual)  );
+	}
+	
+	public BigDecimal getPercentualDoPreco( double percentual ){
+		return preco.multiply(BigDecimal.valueOf(percentual));
+	}
+	
 }
