@@ -1,8 +1,11 @@
 package br.com.caelum.agiletickets.models;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
+import java.util.List;
+
+import org.joda.time.LocalDate;
+import org.joda.time.LocalTime;
 import org.junit.Test;
 
 public class EspetaculoTest {
@@ -81,4 +84,38 @@ public class EspetaculoTest {
 		return sessao;
 	}
 	
+	
+	@Test
+	public void aoChamarMetodoCriaSessoesDeveRetornarUmaListaSessoes() {
+		Espetaculo espetaculo = new Espetaculo();
+		LocalDate inicio = new LocalDate();
+		LocalDate fim = new LocalDate();
+		LocalTime horario = new LocalTime(); 
+		Periodicidade periodicidade = Periodicidade.DIARIA;
+		List<Sessao> sessoes = espetaculo.criaSessoes(inicio, fim, horario, periodicidade);
+		assertTrue(sessoes != null);	
+		
+	}
+	
+	@Test
+	public void aoChamarMetodoCriaSessoesComUmaDataDeveRetornarUmaListaComUmaSessao() {
+		Espetaculo espetaculo = new Espetaculo();
+		LocalDate inicio = new LocalDate();
+		LocalDate fim = new LocalDate();
+		LocalTime horario = new LocalTime(); 
+		Periodicidade periodicidade = Periodicidade.DIARIA;
+		List<Sessao> sessoes = espetaculo.criaSessoes(inicio, fim, horario, periodicidade);
+		assertEquals(1,	sessoes.size());
+	}
+	
+	@Test
+	public void aoChamarMetodoCriaSessoesComRangeDeDataEPeriodicidadeDiariaDeveRetornarUmaListaDeSessoesComUmaSessaoParaCadaDia() {
+		Espetaculo espetaculo = new Espetaculo();
+		LocalDate inicio = new LocalDate();
+		LocalDate fim = inicio.plusDays(2);
+		LocalTime horario = new LocalTime(); 
+		Periodicidade periodicidade = Periodicidade.DIARIA;
+		List<Sessao> sessoes = espetaculo.criaSessoes(inicio, fim, horario, periodicidade);
+		assertEquals(2,	sessoes.size());
+	}
 }

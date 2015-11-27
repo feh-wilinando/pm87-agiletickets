@@ -41,6 +41,7 @@ public class SessaoTest {
 	}
 	
 	@Test
+<<<<<<< HEAD
 	public void deveReservarTodasAsVagasDaSessao()  {
 		
 		Sessao sessao = new Sessao();
@@ -52,4 +53,13 @@ public class SessaoTest {
 	
 	
 	
+=======
+	public void deveVender10ingressosSeHa10vagas() throws Exception {
+		Sessao sessao = new Sessao();
+		sessao.setTotalIngressos(10);
+		
+		Assert.assertTrue(sessao.podeReservar(10));
+	}
+	
+>>>>>>> f0ae0e1206871dcd3aa76e58346fa2c3023d900e
 }
