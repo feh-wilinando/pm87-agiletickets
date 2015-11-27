@@ -46,7 +46,7 @@ public class SessaoTest {
 		Sessao sessao = new Sessao();
 		sessao.setTotalIngressos(10);
 		
-		assertTrue(!sessao.podeReservar(10));
+		assertTrue(sessao.podeReservar(10));
 		
 	}
 	
