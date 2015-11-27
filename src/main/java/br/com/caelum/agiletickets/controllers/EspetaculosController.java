@@ -28,11 +28,8 @@ import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.validator.SimpleMessage;
 import br.com.caelum.vraptor.validator.Validator;
 
-<<<<<<< HEAD
-=======
-import com.google.common.base.Strings;
 
->>>>>>> f0ae0e1206871dcd3aa76e58346fa2c3023d900e
+
 @Controller
 public class EspetaculosController {
 	
@@ -42,10 +39,7 @@ public class EspetaculosController {
 	private Validator validator;
 	private Agenda agenda;
 	private DiretorioDeEstabelecimentos estabelecimentos;
-<<<<<<< HEAD
 
-=======
->>>>>>> f0ae0e1206871dcd3aa76e58346fa2c3023d900e
 	
 	/** @deprecated CDI eyes only*/
 	protected EspetaculosController() {
@@ -150,9 +144,6 @@ public class EspetaculosController {
 		validator.onErrorUse(status()).notFound();
 		return espetaculo;
 	}
-<<<<<<< HEAD
-=======
 
->>>>>>> f0ae0e1206871dcd3aa76e58346fa2c3023d900e
 	
 }
